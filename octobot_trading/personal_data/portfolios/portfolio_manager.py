@@ -64,7 +64,7 @@ class PortfolioManager(util.Initializable):
             if self.trader.simulate:
                 return self._refresh_simulated_trader_portfolio_from_order(order)
             # on real trading: reload portfolio to ensure portfolio sync
-            return await self._refresh_real_trader_portfolio()
+            return True
         return False
 
     async def handle_balance_updated(self):
